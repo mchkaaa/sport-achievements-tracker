@@ -1,0 +1,91 @@
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-base: #E6EBEF; /* Фон елементів */
+    -fx-background-color: #F4F6F8; /* Основний холодний мінімалістичний фон */
+    -fx-text-fill: #2A2F36; /* Темний контрастний текст */
+
+    /* Акцент Nordic Blue */
+    -fx-accent-color: #5E81AC;
+    -fx-selection-bar: #88C0D0; /* Cyan Nord */
+}
+
+/* Всі інтерактивні елементи */
+.button, .text-field, .date-picker, .choice-box {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #C9D1D9;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0.0, 0, 2);
+}
+
+/* Кнопки */
+.button {
+    -fx-background-color: #5E81AC;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16 8 16;
+    -fx-background-insets: 0;
+}
+
+.button:hover {
+    -fx-background-color: #53789B; /* Темніший Nord Blue */
+}
+
+/* Статистика */
+.label#statsLabel {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: #E8EEF2; /* Ніжний об'єм */
+    -fx-padding: 10px;
+    -fx-background-radius: 10;
+    -fx-border-color: #B7C3CC;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+/* Таблиця */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #C9D1D9;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 0;
+
+    -fx-table-cell-border-color: #D6DEE5;
+    -fx-border-width: 2;
+}
+
+/* Заголовок колонок */
+.table-view .column-header-background {
+    -fx-background-color: #D9E2EA; /* Холодний блакитно-сірий */
+    -fx-background-radius: 10 10 0 0;
+}
+
+/* Текст заголовків */
+.table-view .column-header .label {
+    -fx-text-fill: #2A2F36;
+    -fx-font-weight: bold;
+}
+
+/* Рядки таблиці */
+.table-row-cell:odd {
+    -fx-font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-cell-size: 32px;
+    -fx-background-color: #FFFFFF;
+}
+
+.table-row-cell:even {
+    -fx-font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-cell-size: 32px;
+    -fx-background-color: #F1F3F5;
+}
+
+/* Виділений елемент */
+.table-row-cell:selected {
+    -fx-font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Segoe UI", sans-serif;;
+    -fx-font-size: 16px;
+    -fx-cell-size: 32px;
+    -fx-background-color: #5E81AC; /* Nordic Blue */
+    -fx-text-fill: white;
+}

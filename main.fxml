@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.MainController"
+            prefWidth="1200" prefHeight="700">
+
+    <top>
+        <ToolBar>
+            <Button text="Додати" onAction="#onAddClicked"/>
+            <Button text="Видалити" onAction="#onDeleteClicked"/>
+            <Button text="Редагувати" onAction="#onEditClicked"/>
+            <Button text="Графік" onAction="#openProgress"/>
+            <Separator orientation="VERTICAL"/>
+            <Button text="Експорт CSV" onAction="#onExportClicked" styleClass="secondary"/> <Separator orientation="VERTICAL"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Тема:"/>
+            <ChoiceBox fx:id="themeChoice" prefWidth="100"/>
+        </ToolBar>
+    </top>
+
+    <center>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12"/>
+            </padding>
+
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <TextField fx:id="searchField" promptText="Пошук за типом або нотаткою" HBox.hgrow="ALWAYS"/>
+                    <Button text="Пошук" onAction="#doSearch"/>
+                    <Label text="Фільтр за датою:"/>
+                    <DatePicker fx:id="filterDatePicker"/>
+                    <Button text="Очистити" onAction="#loadAll"/>
+                </HBox>
+
+                <HBox fx:id="dashboardBox" spacing="15" alignment="CENTER_LEFT"/>
+
+                <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colDate" text="Дата" prefWidth="120"/>
+                        <TableColumn fx:id="colType" text="Тип" prefWidth="150"/>
+                        <TableColumn fx:id="colDuration" text="Тривалість (хв)" prefWidth="120"/>
+                        <TableColumn fx:id="colMoodEmoji" text="Настрій" prefWidth="80"/>
+                        <TableColumn fx:id="colNote" text="Коментар" minWidth="380"/>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
+                </TableView>
+            </VBox>
+
+            <VBox minWidth="350" maxWidth="350" spacing="10" VBox.vgrow="ALWAYS">
+                <Label text="Розподіл тренувань" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+
+                <PieChart fx:id="activityPieChart" title="Загальна тривалість" minHeight="200" maxHeight="200"/>
+
+                <Label text="🏆 Ваші рекорди" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #755A57;"/>
+                <VBox fx:id="recordsBox" spacing="5" VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.AddController"
+      spacing="8"
+      alignment="CENTER"
+      style="-fx-padding: 12;">
+
+    <Label text="Додати тренування" style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+    <TextField fx:id="dateField" promptText="Дата (YYYY-MM-DD)"/>
+    <TextField fx:id="typeField" promptText="Тип тренування"/>
+    <TextField fx:id="durationField" promptText="Тривалість (хв)"/>
+    <TextField fx:id="moodField" promptText="Настрій (1-5)"/>
+    <TextField fx:id="noteField" promptText="Коментар (опціонально)"/>
+
+    <HBox spacing="8">
+        <Button text="Зберегти" onAction="#onSaveClicked"/>
+        <Button text="Скасувати" onAction="#onCancelClicked"/>
+    </HBox>
+</VBox>

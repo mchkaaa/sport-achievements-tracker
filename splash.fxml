@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.SplashController"
+      alignment="CENTER" spacing="12" prefWidth="400" prefHeight="250" style="-fx-background-color: linear-gradient(#f6f6f9,#e9eef8);">
+    <ImageView fitWidth="120" fitHeight="120">
+        <!-- можна вказати свій логотип: add image file в resources і вказати тут -->
+    </ImageView>
+    <Label style="-fx-font-size:24px; -fx-font-weight:bold;">FitMood</Label>
+    <Label>Завантаження...</Label>
+</VBox>
